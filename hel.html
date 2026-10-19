@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>world</title>
+<style>
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #03152B 0%,
+        #0A3152 45%,
+        #155283 75%,
+        #1C5F91 100%
+    );
+}
+
+.IV {
+
+    margin-left: 270px;
+    margin-top: 40px;
+
+    width: 50%;
+    height: 75vh;
+
+    background: linear-gradient(
+        135deg,
+        #0A3D64 0%,
+        #104877 50%,
+        #155283 100%
+    );
+
+    border: 4px solid #0A5A8A;
+
+    border-radius: 55px;
+
+    box-shadow:
+
+        0 0 0 8px black,
+
+        0 0 0 11px #187DB5,
+
+        0 0 10px rgba(24, 125, 181, 0.1),
+
+        0 8px 15px rgba(0, 0, 0, 0.5);
+
+    padding: 30px;
+
+    display: flex;
+
+    gap: 25px;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+
+
+.left {
+
+    width: 64%;
+
+    flex-shrink: 0;
+}
+
+
+
+
+.textinput {
+
+    margin-top: 0px;
+
+    background: #040F1B;
+
+    border-radius: 40px;
+
+    padding: 5px;
+
+    color: white;
+
+    text-align: right;
+
+    outline: none;
+
+    display: inline-block;
+}
+
+
+.text {
+
+    font-size: 20px;
+
+    border: 2px solid #FFFFFF;
+
+    background: #040F1B;
+
+    border-radius: 35px;
+
+    text-align: right;
+
+    padding: 32px 70px;
+
+    box-shadow:
+
+        inset 0px 8px 16px rgba(0, 0, 0, 0.8),
+
+        inset 0px -4px 10px rgba(0, 0, 0, 0.6),
+
+        0px 0px 15px rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    outline: none;
+}
+
+
+
+.buttons {
+
+    width: 87%;
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 15px;
+}
+
+
+.buttons button {
+
+    width: 80px;
+
+    height: 52px;
+
+    background: linear-gradient(
+        145deg,
+        #193A57,
+        #03152B
+    );
+
+    color: white;
+
+    border: 3px solid #00E5FF;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 5px 0 #02101E,
+
+        0 8px 12px rgba(0, 0, 0, 0.65),
+
+        0 0 8px rgba(2, 150, 242, 0.35);
+
+    transition: 0.15s;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.buttons button:hover {
+
+    background: linear-gradient(
+        145deg,
+        #0E3E55,
+        #052545
+    );
+
+    box-shadow:
+
+        0 5px 0 #02101E,
+
+        0 8px 15px rgba(0, 0, 0, 0.7),
+
+        0 0 12px rgba(2, 150, 242, 0.5);
+}
+
+
+
+
+.buttons button:active {
+
+    transform: translateY(5px);
+
+    background: #00D9FF;
+
+    color: #001018;
+
+    border-color: white;
+
+    box-shadow:
+
+        0 0 10px #00D9FF,
+
+        0 0 20px #00D9FF;
+}
+
+
+/* =========================================================
+   HISTORY PANEL
+   ========================================================= */
+
+.rt {
+
+    width: 32%;
+
+    height: 97%;
+
+    margin-top: 20px;
+
+    color: white;
+
+    background: #000000;
+
+    border: 2px solid #0A5A8A;
+
+    border-radius: 30px;
+
+    box-shadow:
+
+        0 0 0 7px #062B46,
+
+        0 0 12px rgba(24,125,181,0.6),
+
+        0 8px 15px rgba(0,0,0,0.8);
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HISTORY TITLE
+   ========================================================= */
+
+.rt h3 {
+
+    color: #5FA8D3;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    margin-top: 5px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+
+        0 0 8px #0296F2;
+}
+
+#history {
+
+    height: calc(100% - 45px);
+
+    overflow-y: auto;
+
+    padding: 5px 12px 15px 12px;
+
+    box-sizing: border-box;
+}
+
+
+.history-item {
+
+    background: linear-gradient(
+        145deg,
+        #071A2B,
+        #02080F
+    );
+
+    border: 1px solid #075B8F;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+
+        0 3px 8px rgba(0,0,0,0.6);
+}
+
+
+.history-item:hover {
+
+    border-color: #00D9FF;
+
+    background: linear-gradient(
+        145deg,
+        #0B2D46,
+        #031522
+    );
+
+    box-shadow:
+
+        0 0 10px rgba(0,217,255,0.4);
+}
+
+
+/* =========================================================
+   HISTORY EXPRESSION
+   ========================================================= */
+
+.history-expression {
+
+    color: #A9D6EF;
+
+    font-size: 14px;
+
+    text-align: right;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   HISTORY RESULT
+   ========================================================= */
+
+.history-result {
+
+    color: #00D9FF;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-align: right;
+
+    text-shadow:
+
+        0 0 6px rgba(0,217,255,0.5);
+}
+
+
+/* =========================================================
+   EMPTY HISTORY
+   ========================================================= */
+
+.empty-history {
+
+    color: #41657A;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   BOTTOM BUTTON ROW
+   ========================================================= */
+
+.bottom-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   EQUAL BUTTON
+   ========================================================= */
+
+.equal {
+
+    width: 245px;
+
+    height: 60px;
+
+    background: linear-gradient(
+        145deg,
+        #A9D6EF,
+        #5FA8D3,
+        #317A9E
+    );
+
+    color: #061522;
+
+    border: 3px solid #0296F2;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-left: 2px;
+
+    box-shadow:
+
+        0 5px 0 #02101E,
+
+        0 8px 15px rgba(0,0,0,0.7),
+
+        0 0 12px rgba(2,150,242,0.5);
+
+    transition: 0.15s;
+}
+
+
+/* =========================================================
+   AC BUTTON
+   ========================================================= */
+
+.equa {
+
+    width: 80px;
+
+    height: 53px;
+
+    background: linear-gradient(
+        145deg,
+        #A9D6EF,
+        #5FA8D3,
+        #317A9E
+    );
+
+    color: #061522;
+
+    border: 3px solid #0296F2;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 5px 0 #02101E,
+
+        0 8px 15px rgba(0,0,0,0.7),
+
+        0 0 12px rgba(2,150,242,0.5);
+
+    transition: 0.15s;
+}
+
+
+/* =========================================================
+   BOTTOM BUTTON HOVER
+   ========================================================= */
+
+.equal:hover,
+.equa:hover {
+
+    background: linear-gradient(
+        145deg,
+        #BFE3F7,
+        #72B9DF,
+        #3B8BB2
+    );
+
+    box-shadow:
+
+        0 5px 0 #02101E,
+
+        0 8px 15px rgba(0,0,0,0.7),
+
+        0 0 16px rgba(2,150,242,0.7);
+}
+
+.equal:active,
+.equa:active {
+
+    transform: translateY(5px);
+
+    background: #FBFCF8;
+
+    color: #001018;
+
+    border-color: white;
+
+    box-shadow:
+
+        0 0 10px #FBFCF8,
+
+        0 0 20px #FBFCF8;
+}
+
+
+/* =========================================================
+   HISTORY SCROLLBAR
+   ========================================================= */
+
+#history::-webkit-scrollbar {
+
+    width: 6px;
+}
+
+
+#history::-webkit-scrollbar-track {
+
+    background: #02080F;
+}
+
+#history::-webkit-scrollbar-thumb {
+
+    background: #075B8F;
+
+    border-radius: 10px;
+}
+
+#history::-webkit-scrollbar-thumb:hover {
+
+    background: #00AEEF;
+}
+/* Highlights buttons containing operators: x, ÷, +, -, % */
+.buttons button[onclick*="x"],
+.buttons button[onclick*="/"],
+.buttons button[onclick*="+"],
+.buttons button[onclick*="-"],
+.buttons button[onclick*="%"] {
+    border-color: #FFB300; /* Amber/Gold color to stand out against the blue theme */
+    box-shadow: 
+        0 5px 0 #02101E,
+        0 8px 12px rgba(0, 0, 0, 0.65),
+        0 0 8px rgba(255, 179, 0, 0.35); /* Updates the glowing effect color */
+}/* Highlights operator buttons while they are being clicked/pressed */
+.buttons button[onclick*="x"]:active,
+.buttons button[onclick*="/"]:active,
+.buttons button[onclick*="+"]:active,
+.buttons button[onclick*="-"]:active,
+.buttons button[onclick*="%"]:active {
+    background: #FFB300; /* Fills button with the highlighting amber gold color */
+    color: #061522;      /* Switches text to dark blue for readability */
+    border-color: #FFFFFF; /* White border flash on click */
+    box-shadow: 
+        0 0 10px #FFB300,
+        0 0 20px #FFB300; /* Stronger amber/gold glow effect on press */
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="IV">
+    <div class="left">
+           <div class="textinput">
+            <input
+                type="text"
+                class="text"
+                id="display"
+                placeholder="Enter expression">
+        </div>
+        <div class="buttons">
+            <button onclick="addValue('1')">1</button>
+            <button onclick="addValue('2')">2</button>
+            <button onclick="addValue('3')">3</button>
+            <button onclick="addValue('x')">x</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addValue('4')">4</button>
+            <button onclick="addValue('5')">5</button>
+            <button onclick="addValue('6')">6</button>
+            <button onclick="addValue('/')">/</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addValue('7')">7</button>
+            <button onclick="addValue('8')">8</button>
+            <button onclick="addValue('9')">9</button>
+            <button onclick="addValue('+')">+</button>
+        </div>
+        <div class="buttons">
+            <button onclick="addValue('0')">0</button>
+            <button onclick="addValue('.')">.</button>
+            <button onclick="addValue('%')">%</button>
+            <button onclick="addValue('-')">-</button>
+        </div>
+        <div class="bottom-buttons">
+          <button class="equal"onclick="calculate()">= </button>
+
+            <button
+                class="equa"
+                onclick="clearCalculator()">
+                AC
+            </button>
+        </div> </div>
+    <div class="rt">
+        <h3>HISTORY</h3>
+        <div id="history">
+            <div class="empty-history">
+                No calculations yet
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+const display = document.getElementById("display");
+const history = document.getElementById("history");
+function addValue(value) {
+
+    display.value += value;
+
+}
+
+
+
+
+function calculate() {
+    let expression = display.value.trim();
+
+    if (expression === "") {
+        return;
+    }
+
+    try {
+        // Convert calculator symbols
+        let calculation = expression
+            .replace(/x/g, "*")
+            .replace(/÷/g, "/");
+
+        // Calculate the answer
+        let result = Function(
+            '"use strict"; return (' + calculation + ')'
+        )();
+
+        // Handle division by zero and non-finite results
+        if (typeof result !== "number" || !Number.isFinite(result)) {
+            display.value = "NOT DEFINED";
+            return;
+        }
+
+        // Round long decimal answers
+        result = Number(result.toFixed(7));
+
+        // Save only valid calculations
+        saveHistory(expression, result);
+
+        // Display the answer
+        display.value = result;
+
+    } catch (error) {
+        display.value = "Error";
+    }
+}
+
+
+/* =========================================================
+   SAVE HISTORY
+   ========================================================= */
+
+function saveHistory(expression, result) {
+
+
+    /*
+     Get old history display on history panel
+     */
+
+    let oldHistory =
+        JSON.parse(
+            localStorage.getItem("calculatorHistory")
+        ) || [];
+
+
+    /*
+     Add newest calculation
+     */
+
+    oldHistory.unshift({
+
+        expression: expression,
+
+        result: result
+
+    });
+
+
+    /*
+     Keep maximum 30 calculations
+     */
+
+    if (oldHistory.length > 30) {
+
+        oldHistory.pop();
+
+    }
+
+
+    /*
+     Save to browser
+     */
+
+    localStorage.setItem(
+        "calculatorHistory",
+        JSON.stringify(oldHistory)
+    );
+
+
+    /*
+     Update screen
+     */
+
+    showHistory();
+
+}
+
+/* =========================================================
+   SHOW HISTORY
+   ========================================================= */
+
+function showHistory() {
+
+
+    let oldHistory =
+        JSON.parse(
+            localStorage.getItem("calculatorHistory")
+        ) || [];
+
+
+    /*
+     Clear panel
+     */
+
+    history.innerHTML = "";
+
+    /*
+     No history
+     */
+
+    if (oldHistory.length === 0) {
+
+        history.innerHTML =
+
+            '<div class="empty-history">' +
+
+            'No calculations yet' +
+
+            '</div>';
+
+        return;
+
+    }
+
+    /*
+     Display every calculation
+     */
+
+    oldHistory.forEach(function(item) {
+
+
+        let historyItem =
+            document.createElement("div");
+
+
+        historyItem.className =
+            "history-item";
+
+
+        /*
+         Expression
+         */
+
+        let expression =
+            document.createElement("div");
+
+
+        expression.className =
+            "history-expression";
+
+
+        expression.textContent =
+            item.expression;
+
+
+        /*
+         Result
+         */
+
+        let result =
+            document.createElement("div");
+
+
+        result.className =
+            "history-result";
+
+
+        result.textContent =
+            "= " + item.result;
+
+
+        /*
+         Put them together
+         */
+
+        historyItem.appendChild(
+            expression
+        );
+
+
+        historyItem.appendChild(
+            result
+        );
+
+
+        /*
+         Clicking history item
+         puts result into display
+         */
+
+        historyItem.onclick =
+            function() {
+
+                display.value =
+                    item.result;
+
+            };
+
+
+        /*
+         Add to history panel
+         */
+
+        history.appendChild(
+            historyItem
+        );
+
+    });
+
+}
+
+
+function clearCalculator() {
+
+    display.value = "";
+
+}
+
+/* =========================================================
+   LOAD HISTORY WHEN PAGE OPENS
+   ========================================================= */
+
+</script>
+
+
+</body>
+
+</html>
